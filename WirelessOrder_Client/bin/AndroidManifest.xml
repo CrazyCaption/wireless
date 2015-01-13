@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.amaker.wlo"
+      android:versionCode="1"
+      android:versionName="1.0">
+      <!-- 目标版本控制 -->
+      <uses-sdk android:minSdkVersion="6" 
+          		android:maxSdkVersion="17"
+          		android:targetSdkVersion="17"/>
+      <!-- 许可证 -->
+     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    
+     <application android:icon="@drawable/icon" 
+        		 android:label="@string/app_name"
+        		 android:allowBackup="true">
+        		 
+        <activity android:name=".LoginActivity"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        
+        <activity android:name="UpdateActivity"/>
+        <activity android:name="CheckTableActivity"/>
+        <activity android:name="MainMenuActivity" android:launchMode="singleInstance"/>
+        <activity android:name="OrderActivity"/>
+        <activity android:name="PayActivity"/>
+        
+		<provider android:name="com.amaker.provider.MenuProvider" 
+		    	  android:authorities="com.amaker.provider.MENUS" />
+        <provider android:name="com.amaker.provider.TableProvider" 
+             	  android:authorities="com.amaker.provider.TABLES"/>
+    </application>
+</manifest> 
